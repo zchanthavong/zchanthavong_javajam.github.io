@@ -1,0 +1,216 @@
+/*box sizing for all elements*/
+* {box-sizing: border-box; }
+/* Styles for our Body */
+body {
+	background-color: #D2B48C; /* This sets the background color for the website */
+	color: #221811; /* This sets the text color for the website */
+	font-family: Tahoma, Arial, sans-serif; /* Always use three fonts */
+	margin: 0;
+}
+/* Styles for the Wrapper */
+#wrapper {
+	background-color: #231814;
+	padding: 0;
+}
+/* Styles for the header */
+header {
+	background-image: url(../image/cup.jpg);
+	background-repeat: no-repeat;
+	background-color: #D2B48C;
+	color: #231814;
+	height: 128px;
+	padding-left: 105px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+header a { text-decoration: none; } /*psuedo-class*/
+header a:link {color: #231814; }
+header a:visited {color: #231814; }
+header a:hover {color: #FEF6C2; }
+/* Styles for Heading tags */
+h1 { font-size: 2em; } /* Set the font size for h1 */
+h2 { color: #8C3826; } /* One-liners can be single */
+h3, dt { color: #8C3826; }
+h4 {
+	background-color: #D2B48C;
+	font-size: 1.2em;
+	padding-left: .5em;
+	padding-bottom: 0;
+	text-transform: uppercase;
+	border-bottom: 1px solid #221811;
+	clear: left;
+}
+/* Styles for Navigation */
+nav {
+	text-align: center;
+	font-size: 1.5em;
+}
+nav a { text-decoration: none; }
+nav a:link{ color: #FEF6C2; }
+nav a:visited { color: #D2B48C; }
+nav a:hover { color: #CC9933; }
+nav ul {
+	display: flex;
+	flex-direction: column;
+	font-size:1.25em;
+	margin: 0;
+	list-style-type: none;
+	padding: 0;
+}
+nav li {
+	border-bottom: 1px solid #FEF6C2;
+	padding: .5em .1em;
+	width: 100%;
+}
+/* Styles for the Main */
+main {
+	display: block;
+	padding: 0 0 2em 0;
+	background-color: #FEF6C2;
+}
+main ul { padding-left: 2em }
+h2, h3, h5, p, div, dl {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+/* Styles for class Details */
+.details {
+	padding-left: 20%;
+	padding-right: 20%;
+	overflow: auto;
+}
+/* Styles for Images */
+img {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/* Styles for id Homehero */
+#homehero {
+	height: 300px;
+	background-image: url(../image/road.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#heromugs {
+	height: 300px;
+	background-image: url(../image/threemugs.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#heroguitar {
+	height: 300px;
+	background-image: url(../image/guitar.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#herojobs {
+	height: 300px;
+	background-image: url(../image/coffeecup.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+/* Styles for the Footer */
+footer {
+	background-color: #D2B48C;
+	font-size: .60em; /* Set font size to .60 of the element */
+	font-style: italic; /* Set font style to italic */
+	text-align: center;
+	padding-bottom: 1em;
+	border-top: 2px solid #8C3826;
+}
+#mobile { display: inline; }
+#desktop { display: none; }
+
+/* Styles for the table */
+table {
+	margin: auto; /* Centers tabel */
+	width: 90%; /* Width is 90% of container */
+	border-spacing: 0; /* Removes table spacing */
+}
+th,td { padding: 10px }
+tr:nth-of-type(odd) { background-color: #D2B48E; }
+
+/* Styles for the form */
+form{
+	display: flex;
+	flex-direction: column;
+	padding-left: 1em;
+	width: 80%
+}
+input, textarea { margin-bottom: .5em; }
+
+/* Mobile query for medium screen */
+@media (min-width: 600px) {
+	header {
+		padding-left: 0;
+		text-align: center;
+	}
+	h1 { font-size: 3em; }
+	nav ul {
+		flex-flow: row nowrap;
+		justify-content: space-around;
+	}
+	nav li { border-bottom: none; }
+	#homehero {
+		background-image: url(../image/hero.jpg);
+		height: 50vh;
+	}
+	#heromugs {
+		background-image: url(../image/heromugs.jpg);
+		height: 50vh;
+	}
+	#heroguitar {
+		background-image: url(../image/heroguitar.jpg);
+		height: 50vh;
+	}
+	#herojobs {
+		background-image: url(../image/herojobs.jpg);
+		height: 50vh;
+	}
+	#flow {
+		display: flex;
+		flex-direction: row;
+	}
+	#mobile { display: none; }
+	#desktop { display: inline; }
+	.details {
+		display: flex;
+		flex-direction: row;
+	}
+	h4 {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	form {
+		width: 40%;
+		display: grid;
+		grid-gap: 1em; gap: 1em;
+		grid-template-columns: 6em 1fr;
+	}
+	input [type="submit"] { grid-column: 2 / 3;
+	width: 9em; }
+	input [type="reset"] { grid-column: 2 / 3;
+	width: 9em; }
+}
+
+/* Media query for large screen */
+@media (min-width: 1024px) {
+	@supports (display: grid) {
+		header { grid-area: header; }
+		nav { grid-area: nav; }
+		main { grid-area: main; }
+		footer { grid-area: footer; }
+		#wrapper {
+			display: grid;
+			grid-template:
+				"header header"
+				"nav main"
+				"footer footer"
+				/ 200px;
+		}
+		nav ul { flex-direction: column; }
+		header { background-image: url(../image/coffeelogo.jpg); }
+	}
+}
